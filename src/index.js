@@ -80,7 +80,6 @@ function main() {
           const currentTodo = todos.find(
             (todo) => parseInt(todo.id, 10) === parseInt(input.dataset.id, 10)
           );
-          console.log(currentTodo);
           editTodo(todos.indexOf(currentTodo) + 1, item);
         }
       }
