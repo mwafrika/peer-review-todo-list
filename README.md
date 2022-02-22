@@ -20,7 +20,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://mwafrika.github.io/Todo-project-with-webpack/)
+[Live Demo Link](https://mwafrika.github.io/peer-review-todo-list/)
 
 ## Built With
 
