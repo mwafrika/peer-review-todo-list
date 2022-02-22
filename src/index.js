@@ -158,6 +158,7 @@ const addTodo = (todos = JSON.parse(localStorage.getItem('todos'))) => {
     const edit = document.createElement('span');
     const icon = document.createElement('i');
     const iconEdit = document.createElement('i');
+
     card.classList.add('card');
     button.classList.add('clear');
     edit.classList.add('editInputShow');
