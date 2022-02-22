@@ -10,8 +10,8 @@ function main() {
   document.querySelector('.todos').addEventListener('dragover', function (e) {
     e.preventDefault();
     if (
-      !e.target.classList.contains('dragging')
-      && e.target.classList.contains('card')
+      !e.target.classList.contains('dragging') &&
+      e.target.classList.contains('card')
     ) {
       const draggingCard = document.querySelector('.dragging');
       const cards = [...this.querySelectorAll('.card')];
@@ -78,9 +78,9 @@ function main() {
         if (item) {
           const todos = JSON.parse(localStorage.getItem('todos'));
           const currentTodo = todos.find(
-            (todo) => parseInt(todo.id, 10) === parseInt(input.dataset.id, 10),
+            (todo) => parseInt(todo.id, 10) === parseInt(input.dataset.id, 10)
           );
-
+          console.log(currentTodo);
           editTodo(todos.indexOf(currentTodo) + 1, item);
         }
       }
@@ -97,7 +97,7 @@ function main() {
     const deleteIndexes = [];
     document.querySelectorAll('.card.checked').forEach((card) => {
       deleteIndexes.push(
-        [...document.querySelectorAll('.todos .card')].indexOf(card),
+        [...document.querySelectorAll('.todos .card')].indexOf(card)
       );
       card.classList.add('fall');
       card.addEventListener('animationend', () => {
@@ -198,9 +198,9 @@ const addTodo = (todos = JSON.parse(localStorage.getItem('todos'))) => {
       const { checked } = this;
       stateTodo(
         [...document.querySelectorAll('.todos .card')].indexOf(
-          correspondingCard,
+          correspondingCard
         ),
-        checked,
+        checked
       );
       checked
         ? correspondingCard.classList.add('checked')
@@ -212,8 +212,8 @@ const addTodo = (todos = JSON.parse(localStorage.getItem('todos'))) => {
       correspondingCard.classList.add('fall');
       removeTodo(
         [...document.querySelectorAll('.todos .card')].indexOf(
-          correspondingCard,
-        ),
+          correspondingCard
+        )
       );
       correspondingCard.addEventListener('animationend', () => {
         setTimeout(() => {
